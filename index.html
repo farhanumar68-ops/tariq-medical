@@ -143,7 +143,7 @@
             color: var(--dark);
         }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR & LOGO AREA --- */
         header {
             position: fixed;
             top: 0;
@@ -167,18 +167,36 @@
             justify-content: space-between;
         }
 
+        /* Dedicated Logo Place Structure */
         .logo {
             display: flex;
             align-items: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
+            gap: 12px;
         }
 
-        .logo img {
-            height: 55px;
+        .logo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-light);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 6px 14px;
+            height: 52px;
+            transition: var(--transition);
+        }
+
+        .logo-box img {
+            max-height: 40px;
             width: auto;
             object-fit: contain;
+        }
+
+        .logo-text-fallback {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
@@ -243,8 +261,8 @@
             display: flex;
             align-items: center;
             padding-top: 100px;
-            background: linear-gradient(135deg, rgba(235, 242, 250, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%), 
-                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(235, 242, 250, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1920&q=80') center/cover no-repeat;
         }
 
         .hero-container {
@@ -647,12 +665,10 @@
             max-width: 320px;
         }
 
-        .footer-logo img {
-            height: 50px;
-            width: auto;
+        .footer-logo .logo-box {
             background: #fff;
-            padding: 5px 10px;
-            border-radius: 8px;
+            border: none;
+            display: inline-flex;
         }
 
         .footer-links h4 {
@@ -749,9 +765,13 @@
     <header id="navbar">
         <div class="container">
             <nav>
+                <!-- DEDICATED LOGO PLACE IN TOGGLE / NAV BAR -->
                 <a href="#" class="logo">
-                    <img src="3.29.jpg" alt="Tariq Clinic Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span style="display:none;" class="brand-font">Tariq Clinic</span>
+                    <div class="logo-box">
+                        <!-- REPLACE src="3.29.jpg" WITH YOUR ACTUAL LOGO IMAGE PATH -->
+                        <img src="3.29.jpg" alt="Tariq Clinic Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="logo-text-fallback" style="display:none;"><i class="fas fa-clinic-medical"></i> TARIQ CLINIC</span>
+                    </div>
                 </a>
 
                 <ul class="nav-links">
@@ -792,7 +812,7 @@
                     <i class="fas fa-star"></i> 5.0 Rated Medical Clinic in Rawalpindi
                 </div>
                 <h1 class="hero-title">Excellence in <em>Outpatient</em> Care</h1>
-                <p class="hero-description">Tariq Clinic provides expert general physician consultations, comprehensive medical care, and compassionate healing located conveniently in Saddar, Rawalpindi.</p>
+                <p class="hero-description">Tariq Clinic provides expert general physician consultations, comprehensive diagnostic care, and patient-centered healing located in Main Saddar Bazar, Rawalpindi.</p>
                 <div class="hero-buttons">
                     <a href="#booking" class="btn btn-primary">Book Appointment <i class="fas fa-arrow-right"></i></a>
                     <a href="tel:+92515528920" class="btn btn-outline" style="color: var(--dark); border-color: var(--dark);"><i class="fas fa-phone-alt"></i> Call Now</a>
@@ -801,7 +821,7 @@
 
             <div class="hero-card-wrapper">
                 <div class="hero-image-card">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80" alt="Doctor Consultation">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80" alt="Tariq Clinic Doctor Consultation">
                 </div>
                 <div class="floating-stat">
                     <div class="icon">
@@ -846,40 +866,40 @@
             <div class="section-header">
                 <span class="section-subtitle">Our Expertise</span>
                 <h2 class="section-title">Comprehensive <em>Healthcare</em> Solutions</h2>
-                <p style="color: var(--gray-dark);">Delivering quality outpatient care and primary medicine for you and your family.</p>
+                <p style="color: var(--gray-dark);">Delivering modern medical practices with evidence-based diagnosis and personalized treatment protocols.</p>
             </div>
 
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="General Physician Consultation">
+                        <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=600&q=80" alt="General Physician Consultation">
                     </div>
                     <div class="service-content">
                         <h3>General Physician Consultation</h3>
-                        <p>Detailed physical exams, preventive health checkups, and diagnosis for acute and routine health concerns.</p>
+                        <p>Thorough medical evaluation, primary health assessments, and treatment plans for routine, acute, and chronic health conditions.</p>
                         <a href="https://wa.me/92515528920?text=Hi%20Tariq%20Clinic,%20I%20want%20to%20inquire%20about%20General%20Physician%20Consultation" target="_blank" style="color: var(--primary); font-weight:700; margin-top:10px; display:inline-block;">Inquire via WhatsApp &rarr;</a>
                     </div>
                 </div>
 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=600&q=80" alt="Outpatient Medical Care">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&q=80" alt="Outpatient Care">
                     </div>
                     <div class="service-content">
                         <h3>Outpatient Medical Care (OPD)</h3>
-                        <p>Efficient treatment and long-term health management protocols without requiring overnight hospital stays.</p>
+                        <p>Prompt outpatient treatments, medical observations, and therapeutic management without requiring hospital stay.</p>
                         <a href="https://wa.me/92515528920?text=Hi%20Tariq%20Clinic,%20I%20want%20to%20inquire%20about%20Outpatient%20Medical%20Care" target="_blank" style="color: var(--primary); font-weight:700; margin-top:10px; display:inline-block;">Inquire via WhatsApp &rarr;</a>
                     </div>
                 </div>
 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Routine Diagnostics">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Routine Health Diagnostics">
                     </div>
                     <div class="service-content">
-                        <h3>Routine Diagnostics</h3>
-                        <p>Hygienic, prompt diagnostic assessments ensuring reliable diagnostic insights for appropriate treatments.</p>
-                        <a href="https://wa.me/92515528920?text=Hi%20Tariq%20Clinic,%20I%20want%20to%20inquire%20about%20Routine%20Diagnostics" target="_blank" style="color: var(--primary); font-weight:700; margin-top:10px; display:inline-block;">Inquire via WhatsApp &rarr;</a>
+                        <h3>Routine Health Diagnostics</h3>
+                        <p>Hygienic diagnostic assessment and preventative health monitoring ensuring precise treatment plans.</p>
+                        <a href="https://wa.me/92515528920?text=Hi%20Tariq%20Clinic,%20I%20want%20to%20inquire%20about%20Health%20Diagnostics" target="_blank" style="color: var(--primary); font-weight:700; margin-top:10px; display:inline-block;">Inquire via WhatsApp &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -891,7 +911,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-img-group">
-                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=800&q=80" alt="Tariq Clinic" class="about-img-main">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Tariq Clinic Premises" class="about-img-main">
                     <div class="about-badge">
                         <span>5.0 ★</span>
                         Rating
@@ -901,8 +921,8 @@
                 <div>
                     <span class="section-subtitle">Our Legacy</span>
                     <h2 class="section-title">A Tradition of <em>Trust & Healing</em></h2>
-                    <p style="color: var(--gray-dark); margin-bottom: 20px;">Located conveniently on Saddar Bazar Rd, Main Saddar Bazar, Rawalpindi, Tariq Clinic stands as a reliable local destination for quality general medicine and primary healthcare.</p>
-                    <p style="color: var(--gray-dark);">We focus on clear patient communication, accurate diagnosis, and establishing a safe, comforting environment for all patients in Rawalpindi.</p>
+                    <p style="color: var(--gray-dark); margin-bottom: 20px;">Situated at Saddar Bazar Rd, Main Saddar Bazar, Rawalpindi, Tariq Clinic stands as a leading local hub for quality medical care and primary health services.</p>
+                    <p style="color: var(--gray-dark);">We believe healthcare requires precise care, proper communication, and long-term health preservation in a clean, professional environment.</p>
 
                     <div class="stats-row">
                         <div class="stat-box">
@@ -929,8 +949,8 @@
             <div class="booking-grid">
                 <div>
                     <span class="section-subtitle" style="background: rgba(255,255,255,0.2); color: var(--white);">Priority Booking</span>
-                    <h2 style="font-size: 2.5rem; margin-top: 15px; margin-bottom: 20px;">Need Medical <em>Consultation?</em></h2>
-                    <p style="opacity: 0.9; margin-bottom: 30px;">Schedule your consultation with Tariq Clinic. You can book directly via WhatsApp or phone call.</p>
+                    <h2 style="font-size: 2.5rem; margin-top: 15px; margin-bottom: 20px;">Need Expert Medical <em>Advice?</em></h2>
+                    <p style="opacity: 0.9; margin-bottom: 30px;">Book your consultation slot online today to avoid waiting times. Our staff will confirm your appointment instantly via WhatsApp or phone call.</p>
                     <div>
                         <a href="tel:+92515528920" style="color: white; font-weight: bold;"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> Direct Phone: +92 51 5528920</a>
                     </div>
@@ -951,7 +971,7 @@
                             <select id="serviceSelect" class="form-control" required>
                                 <option value="General Physician Consultation">General Physician Consultation</option>
                                 <option value="Outpatient Medical Care">Outpatient Medical Care</option>
-                                <option value="Routine Diagnostics">Routine Diagnostics</option>
+                                <option value="Routine Health Diagnostics">Routine Health Diagnostics</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -976,21 +996,21 @@
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p class="review-text">"Excellent medical clinic in Saddar Bazar. Very attentive doctors and polite management."</p>
+                    <p class="review-text">"Tariq Clinic provides exceptional outpatient care in Saddar Bazar. Very professional and polite doctors."</p>
                     <div class="author-name">Usman Tariq</div>
                     <div class="author-role">Rawalpindi Resident</div>
                 </div>
 
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p class="review-text">"Great outpatient services and quick checkups. Highly recommended for general health consultations in Rawalpindi."</p>
+                    <p class="review-text">"Extremely accurate diagnosis and good prescription guidance. The location in Saddar is easy to access."</p>
                     <div class="author-name">Sarah Ahmed</div>
                     <div class="author-role">Verified Patient</div>
                 </div>
 
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p class="review-text">"A clean and welcoming environment. The healthcare provided here is genuinely helpful and professional."</p>
+                    <p class="review-text">"Highly recommended clinic for general medical consultations. Very reliable and quick service."</p>
                     <div class="author-name">Hamza Malik</div>
                     <div class="author-role">Verified Patient</div>
                 </div>
@@ -1005,7 +1025,7 @@
                 <div>
                     <span class="section-subtitle">Get In Touch</span>
                     <h2 class="section-title">Visit Our <em>Clinic</em></h2>
-                    <p style="color: var(--gray-dark); margin-bottom: 30px;">Click any option below to reach out directly to Tariq Clinic.</p>
+                    <p style="color: var(--gray-dark); margin-bottom: 30px;">Click any contact option below to connect directly with Tariq Clinic.</p>
 
                     <div class="contact-info-list">
                         <a href="https://maps.google.com/?q=Saddar+Bazar+Rd,+Main+Saddar+Bazar,+Saddar,+Rawalpindi,+46000" target="_blank" class="contact-info-item">
@@ -1047,10 +1067,12 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="footer-logo">
-                        <img src="3.29.jpg" alt="Tariq Clinic Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                        <span style="display:none;" class="brand-font">Tariq Clinic</span>
+                        <div class="logo-box">
+                            <img src="3.29.jpg" alt="Tariq Clinic Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="logo-text-fallback" style="display:none; color: var(--primary);"><i class="fas fa-clinic-medical"></i> TARIQ CLINIC</span>
+                        </div>
                     </a>
-                    <p>Tariq Clinic is dedicated to delivering high-quality general medical consultation and outpatient care in Saddar, Rawalpindi.</p>
+                    <p>Tariq Clinic is dedicated to providing high-quality general medicine and outpatient medical services in Rawalpindi.</p>
                 </div>
 
                 <div class="footer-links">
@@ -1069,7 +1091,7 @@
                     <ul>
                         <li><a href="#services">General Physician</a></li>
                         <li><a href="#services">Outpatient Care</a></li>
-                        <li><a href="#services">Health Diagnostics</a></li>
+                        <li><a href="#services">Diagnostics</a></li>
                         <li><a href="#services">Consultations</a></li>
                     </ul>
                 </div>
